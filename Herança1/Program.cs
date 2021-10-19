@@ -7,7 +7,8 @@ namespace Herança1
     {
         static void Main(string[] args)
         {
-         
+            ContaJuridica conta = new ContaJuridica(8010, "Lara Croft", 100.0, 500.0);
+            Console.WriteLine(conta.Saldo);
         }
     }
 
