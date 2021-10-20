@@ -6,15 +6,15 @@ using System.Text;
 namespace Herança1
 {
     //criação da subclasse ContaJuridica, que herda a classe Conta
-    class ContaJuridica: Conta
+    class ContaJuridica : Conta
     {
         //Declaração e encapsulamento da variável EmprestimoLimite
         public double EmprestimoLimite { get; set; }
 
         //Construtor Padrão
-        public ContaJuridica() 
+        public ContaJuridica()
         {
-            
+
         }
         //Construtor personalizado com parâmetros da Classe herdada (Conta)
         public ContaJuridica(int numero, string titular, double saldo, double emprestimoLimite) : base(numero, titular, saldo)
