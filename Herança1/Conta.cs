@@ -30,7 +30,7 @@ namespace Herança1
         }
 
         //Operação matemática para saber o valor do Saque
-        public void Saque(double saldoTotal)
+        public virtual void Saque(double saldoTotal)
         {
             Saldo -= saldoTotal;
         }
