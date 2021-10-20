@@ -10,16 +10,21 @@ namespace Herança1
         {
             Conta acc = new Conta(1001, "Goku", 0.0);
             ContaJuridica bacc = new ContaJuridica(1002, "Goten", 0.0, 500.0);
-           
+            ContaPoupança contaP = new ContaPoupança(1003, "Kame", 0.0, 0.3);
 
-           /* Conta acc1 = bacc;
-            Conta acc2 = new ContaJuridica(1003, "Trunks", 0.0, 200.0);
-            Conta acc3 = new ContaPoupança(1004, "Vegeta", 0.0, 0.01);
+            Console.WriteLine(contaP.Saldo);
+           /* //Upcasting
+            Conta acc1 = bacc;
+            Conta acc2 = new ContaJuridica(1003, "Trunks", 0.0, 200.00);
+            Conta acc3 = new ContaJuridica(1004, "Vegeta", 0.0, 0.01);
 
+            //Downcasting
             ContaJuridica acc4 = (ContaJuridica)acc2;
             acc4.Emprestimo(100.0);
+
             if (acc3 is ContaJuridica)
             {
+                //ContaPoupanca acc5 = (ContaPoupanca)acc3;
                 ContaJuridica acc5 = (ContaJuridica)acc3;
                 acc5.Emprestimo(200.0);
                 Console.WriteLine("Emprestimo!");
@@ -27,14 +32,19 @@ namespace Herança1
 
             if (acc3 is ContaPoupança)
             {
+                //ContaPoupanca acc5 = (ContaPoupanca)acc3;
                 ContaPoupança acc5 = acc3 as ContaPoupança;
                 acc5.atualizaçãoSaldo();
                 Console.WriteLine("Atualizado!");
             }*/
+            //Console.WriteLine(acc.Saldo);
+            //Console.WriteLine(bacc.Saldo);
+
+
         }
-          
-        
+
+
     }
-    
+
 
 }

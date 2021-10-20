@@ -29,10 +29,10 @@ namespace Herança1
             Saldo = saldo;
         }
 
-        //Operação matemática para saber o valor do Saque
+        //Operação matemática para saber o valor do Saque (virtual para permitir override)
         public virtual void Saque(double saldoTotal)
         {
-            Saldo -= saldoTotal;
+            Saldo -= saldoTotal + 5.0;
         }
 
         //operação matemátca para saber o valor do Depósito
