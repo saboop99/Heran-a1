@@ -1,4 +1,5 @@
 ﻿using System;
+
 //RAFAEL DO NASCIMENTO RODRIGUES RA 210211
 
 namespace Herança1
@@ -8,11 +9,19 @@ namespace Herança1
         //Necessário para fazer o programa rodar
         static void Main(string[] args)
         {
-            Conta acc = new Conta(1001, "Goku", 0.0);
-            ContaJuridica bacc = new ContaJuridica(1002, "Goten", 0.0, 500.0);
-            ContaPoupança contaP = new ContaPoupança(1003, "Kame", 0.0, 0.3);
+            //criação da conta poupança CP com parametros           
+            ContaPoupança CP = new ContaPoupança(1000, "LOKI", 10.0, 0.01);
 
-            Console.WriteLine(contaP.Saldo);
+            //chamar o metodo saque
+            CP.Saque(0);
+
+            //imprimir o valor atualizado do saldo
+            Console.WriteLine(CP.Saldo);
+
+            
+            
+
+      
            /* //Upcasting
             Conta acc1 = bacc;
             Conta acc2 = new ContaJuridica(1003, "Trunks", 0.0, 200.00);
@@ -37,8 +46,7 @@ namespace Herança1
                 acc5.atualizaçãoSaldo();
                 Console.WriteLine("Atualizado!");
             }*/
-            //Console.WriteLine(acc.Saldo);
-            //Console.WriteLine(bacc.Saldo);
+            
 
 
         }
