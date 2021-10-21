@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Collections.Generic;
 
 //RAFAEL DO NASCIMENTO RODRIGUES RA 210211
 
@@ -9,46 +11,37 @@ namespace Herança1
         //Necessário para fazer o programa rodar
         static void Main(string[] args)
         {
-            //criação da conta poupança CP com parametros           
-            ContaPoupança CP = new ContaPoupança(1000, "LOKI", 10.0, 0.01);
+            //criação de uma lista(numero da conta, nome, saldo, taxa de juros para as poupanças e emprestimo pras juridicas
+            List<Conta> list = new List<Conta>();
+            list.Add(new ContaPoupança(1001, "Woody", 500.0, 0.01));
+            list.Add(new ContaJuridica(1002, "Andy", 500.0, 400.0));
+            list.Add(new ContaPoupança(1003, "Buzz", 500.0, 0.01));
+            list.Add(new ContaJuridica(1002, "Bullseye", 500.0, 400.0));
 
-            //chamar o metodo saque
-            CP.Saque(0);
-
-            //imprimir o valor atualizado do saldo
-            Console.WriteLine(CP.Saldo);
-
-            
-            
-
-      
-           /* //Upcasting
-            Conta acc1 = bacc;
-            Conta acc2 = new ContaJuridica(1003, "Trunks", 0.0, 200.00);
-            Conta acc3 = new ContaJuridica(1004, "Vegeta", 0.0, 0.01);
-
-            //Downcasting
-            ContaJuridica acc4 = (ContaJuridica)acc2;
-            acc4.Emprestimo(100.0);
-
-            if (acc3 is ContaJuridica)
+            //criação da variavel soma com o valor 0 para ir adicionando
+            double soma = 0.0;
+            //foreach para ir somando o Saldo de cada conta na lista
+            foreach (Conta acc in list)
             {
-                //ContaPoupanca acc5 = (ContaPoupanca)acc3;
-                ContaJuridica acc5 = (ContaJuridica)acc3;
-                acc5.Emprestimo(200.0);
-                Console.WriteLine("Emprestimo!");
+                soma += acc.Saldo;
             }
 
-            if (acc3 is ContaPoupança)
+            // escrever na tela o saldo total de toda as contas, que é o valor da variavel soma
+            Console.WriteLine("Total do saldo de todas as contas: " + soma.ToString("F2", CultureInfo.InvariantCulture));
+            //foreache para chamar o Saque de cada conta na lista
+            foreach (Conta acc in list)
             {
-                //ContaPoupanca acc5 = (ContaPoupanca)acc3;
-                ContaPoupança acc5 = acc3 as ContaPoupança;
-                acc5.atualizaçãoSaldo();
-                Console.WriteLine("Atualizado!");
-            }*/
-            
+                acc.Saque(10.0);
+            }
 
-
+            //foreach para atualizar o usuário com todos os resultados das contas da lista após saque (numero da conta, Saldo atualizado)
+            foreach (Conta acc in list)
+            {
+                Console.WriteLine("Atualização do saldo das contas "
+                + acc.Numero + ": " + acc.Saldo.ToString("F2", CultureInfo.InvariantCulture));
+            }
+        
+        
         }
 
 
